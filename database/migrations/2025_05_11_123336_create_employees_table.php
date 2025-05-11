@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type',['branch','parent'])->default('branch');
             $table->string('phone');
             $table->string('email')->unique();
-            $table->string('manager');
-            $table->enum('status',['active', 'inactive'])->default('active');
             $table->foreignId('address_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('area_or_department');
+            $table->string('position');
+            $table->foreignId('branch_id')->nullable()->constrained()->onDelete('set null');
+            $table->date('date_entry');
+            $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('employees');
     }
 };
