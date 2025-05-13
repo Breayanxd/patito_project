@@ -18,4 +18,13 @@ class Address extends Model
         'state',
         'country',
     ];
+
+    public function employee()
+    {
+        return $this->hasOne(Employee::class);
+    }
+
+    public function branch(){
+        return $this->hasOne(Branch::class);
+    }
 }
