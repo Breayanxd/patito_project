@@ -20,7 +20,7 @@ Se definieron las siguientes entidades para el proyecto:
 
 ![Modelo entidad-relación](ModeloRelacional.png)
 
-Es posible seguir normalizando para evitar la redundancia de datos, sin embargo, por temas de tiempos y sencilles del proyecto se realizó de esta manera.
+Es posible seguir normalizando para evitar la redundancia de datos, sin embargo, por tema de tiempo y sencilles del proyecto, se realizó de esta manera.
 
 ## Comandos utilizados durante el proyecto
 
