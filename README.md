@@ -16,12 +16,18 @@ La empresa **Patito S.A. de C.V.**, con más de 10 años de operación, ha logra
 
 
 ## modelado
+
 Se definieron las siguientes entidades para el proyecto:
 
 ![Modelo entidad-relación](ModeloRelacional.png)
 
 Es posible seguir normalizando para evitar la redundancia de datos, sin embargo, por tema de tiempo y sencilles del proyecto, se realizó de esta manera.
 
+## Notas
+
+* El entorno de ejecución utilizado es el mismo que incluye el archivo de .env.example, en este archivo viene incluido el nombre de la base de datos, usuario y el puerto.
+* Las credenciales para inciar sesión son las siguientes, correo: carlos@email.com y contraseña: password123
+ 
 ## Comandos utilizados durante el proyecto
 
 ### Estrutura base
@@ -41,6 +47,3 @@ Es posible seguir normalizando para evitar la redundancia de datos, sin embargo,
 * php artisan make:factory [nombre del fatcory].php
 * php artisan make:Request [nombre del request]
 * php artisan migrate:refresh --seed
-
-## Notas
-El entorno de ejecución utilizado es el mismo que incluye el archivo de .env.example, en este archivo viene incluido el nombre de la base de datos, usuario y el puerto.
