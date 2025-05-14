@@ -42,3 +42,5 @@ Es posible seguir normalizando para evitar la redundancia de datos, sin embargo,
 * php artisan make:Request [nombre del request]
 * php artisan migrate:refresh --seed
 
+## Notas
+El entorno de ejecución utilizado es el mismo que incluye el archivo de .env.example, en este archivo viene incluido el nombre de la base de datos, usuario y el puerto.
