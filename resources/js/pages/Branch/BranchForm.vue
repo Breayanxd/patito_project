@@ -53,13 +53,15 @@ const submit = () => {
 <template>
     <AuthenticatedLayout>
         <BackButton path="/branches " />
-        <h1>
-            {{
-                mode === "create"
+        <div class="text-center">
+            <h1 class="text-3xl bold italic text-gray-800">
+                {{
+                    mode === "create"
                     ? "Registro de Nuevo Establecimiento"
                     : "Editar Establecimiento"
-            }}
-        </h1>
+                }}
+            </h1>
+        </div>
         <form @submit.prevent="submit">
             <BranchFields :form="form" :errors="form.errors"/>
             <AddressFields :form="form.address" :errors="form.errors"/>

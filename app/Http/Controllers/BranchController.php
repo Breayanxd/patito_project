@@ -150,7 +150,7 @@ class BranchController extends Controller
 
         Branch::whereIn('id', $request->ids)->delete();
 
-        return redirect()->back()->with('success', 'Establecimientos eliminados exitosamente.');
+        return redirect()->back()->with('success', 'Establecimiento(s) eliminado(s) exitosamente.');
     }
 
     public function getBranchNames()

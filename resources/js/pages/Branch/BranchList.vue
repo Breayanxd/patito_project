@@ -1,7 +1,7 @@
 <script setup>
 import BackButton from "@/Components/BackButton.vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { router, usePage } from '@inertiajs/vue3'
 import Toast from "@/Components/Toast.vue";
 
@@ -24,6 +24,14 @@ onMounted(()=>{
 
 const selectedBranches = ref([]);
 
+watch(
+    () => page.props.flash?.success,
+    (newVal) => {
+        if (newVal) {
+            flashMessage.value = flashMessage.value = page.props.flash?.success;
+        }
+    }
+);
 const deleteSelected = () =>{
     
     if (!confirm('¿Estás seguro de que deseas eliminar los empleados seleccionados?')) return;
@@ -50,18 +58,22 @@ const goForm = (id) => {
         branch: id,
     }));
 };
+
+const search = () =>{
+    flashMessage.value = 'La barra de búsqueda no está implementada :(';    
+}
 </script>
 
 <template>
     <AuthenticatedLayout>
         <BackButton path="dashboard" />
-        <div class="p-4">
+        <div class="px-6 py-4">
             <div
                 class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6"
             >
-                <div class="absolute left-1/2 transform -translate-x-1/2">
+                
                     <h1 class="text-2xl font-bold text-center">Sucursales</h1>
-                </div>
+                
 
                 <div class="flex items-center gap-2 w-full md:w-auto">
                     <input
@@ -69,7 +81,7 @@ const goForm = (id) => {
                         placeholder="Buscar sucursal..."
                         class="border border-gray-300 rounded px-4 py-2 w-full md:w-64"
                     />
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded" @click="search">
                         Buscar
                     </button>
                 </div>
@@ -92,7 +104,7 @@ const goForm = (id) => {
                     </button>
                 </div>
             </div>
-
+            <div class="h-[60vh] overflow-y-auto pr-2">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div
                     v-for="branch in branches"
@@ -120,6 +132,7 @@ const goForm = (id) => {
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
         <Toast

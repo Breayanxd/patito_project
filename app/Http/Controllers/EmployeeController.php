@@ -153,6 +153,6 @@ class EmployeeController extends Controller
         ]);
 
         Employee::whereIn('id', $request->ids)->delete();        
-        return redirect()->back()->with('success', 'Empleados eliminados exitosamente.');
+        return redirect()->back()->with('success', 'Empleado(s) eliminado(s) exitosamente.');
     }
 }

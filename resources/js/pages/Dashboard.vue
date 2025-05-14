@@ -24,8 +24,8 @@ const goToModule = (pathModule) =>{
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>        
-        <div class="p-6">
-            <h1 class="text-2xl font-semibold mb-4">Módulos</h1>
+        <div class="p-6 h-full">
+            <h1 class="text-3xl font-semibold mb-4 ml-10">Módulos</h1>
             
             <div class="flex flex-wrap justify-center gap-6">
                 <div 
